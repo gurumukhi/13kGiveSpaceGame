@@ -8,8 +8,8 @@
         <a-scene>
             
             <!-- Side boundary lines -->
-            <a-entity line="start: -1.5 -1 -3; end: -1.5 11.5 -28; color: red"
-                   line__2="start:  2.5 -1 -3; end:  2.5 11.5 -28; color: red">
+            <a-entity line="start: -2 -1 -3; end: -2 11.5 -28; color: red"
+                   line__2="start:  2 -1 -3; end:  2 11.5 -28; color: red">
             </a-entity>
             
             <!-- Osbtacle coming through -->
@@ -22,7 +22,7 @@
             <!-- Camera with a triangle representing player's location (which is movable with WASD/look controls) -->
             <a-entity id="camera-container" position="0 3 -4">
                 <a-entity id="camera" camera look-controls wasd-controls>
-                    <a-triangle id="me-triangle" position="0 -2 -3" color="red"></a-triangle>
+                    <a-triangle id="me-triangle" height="0.5" position="0 -2 -2.5" color="red"></a-triangle>
                 </a-entity>
             </a-entity>
         </a-scene>
@@ -32,9 +32,9 @@
 <script>
 
     // Obstacle positions (L/R = 0/1)
-    var obstacles_position = ['', 1, 1, 1, 0];
+    var obstacles_position = ['', '', 0.5, 0.5, -0.5];
     for(var a=5; a<150; a++){
-        obstacles_position[a] = Math.floor((Math.random() * 2) + 1) - 1;
+        obstacles_position[a] = Math.floor(Math.random() * 2) ? 0.5 : -0.5;
     }
 
     var i = 2; // i is used to adjust Y & Z axis of obstacles in new position after animation.
