@@ -33,7 +33,7 @@
 
     // Obstacle positions (L/R = 0/1)
     var obstacles_position = ['', '', 0.5, 0.5, -0.5];
-    for(var a=5; a<150; a++){
+    for(var a=5; a<200; a++){
         obstacles_position[a] = Math.floor(Math.random() * 2) ? 0.5 : -0.5;
     }
 
@@ -46,7 +46,7 @@
         if (i > 7) {
             // This is when every obstacle is crossing the player, time to check player's location
             if(!isPlayerSafe()){
-                alert('You lost the game. You score: '+ count +'.\n\n You can refresh the page to play again! Score 150 to win game.');
+                alert('You lost the game. You score: '+ count +'.\n\n You can refresh the page to play again! Score 200 to win game.');
                 return;
             }
             count++;
