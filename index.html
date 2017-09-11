@@ -67,7 +67,7 @@
     // Function for animation frame renderAnimationFrameing
     function renderAnimationFrame() {
         if(playerHit){
-            alert('You lost the game. You score: '+ count +'.\n\n Refresh the page to play again! Score 200 to win the game.');
+            alert('You lost the game, you were either hit by obstacle or you touched the boundary line. \n\nYou scored '+ count +', score 200 to win the game. Refresh the page to play again!\n');
             return;
         }
         if (i > 7) {
@@ -90,7 +90,7 @@
         
         if(parseInt(count+1) > parseInt(obstacles_position.length)) {
             // If user have won the game
-            alert('Congratualtions, you won the game :-) You score: '+ count +'.\n\n Refresh the page to play again!');
+            alert('Congratualtions, you won the game :-) Your score: '+ count +'.\n\n Refresh the page to play again!');
             return;
         }
         requestAnimationFrame(renderAnimationFrame);
